@@ -1,0 +1,57 @@
+html,body{
+    color: #505050;
+    line-height: 1.75em;
+    background: #ebebeb;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 100%;
+}
+/**------------------main-head样式----------------*/
+.main-header{
+    text-align: center;
+    padding: 5px 0;
+    background: #ffffff;
+    height: 15%;
+}
+.main-header .branding{
+    font-size: 3.5em;
+    color: #303030;
+    float: left;
+}
+a{
+    color: #e67e22;
+    outline: none;
+    text-decoration-line: none;
+}
+.main-header .branding img{
+    max-width: 100%;
+    position: relative;
+}
+a:active,a:focus,a img{
+    outline: none;
+}
+/**------------------main-body样式----------------*/
+.main-body{
+    border-top: 1px solid #8c8c8c;
+    border-bottom: 1px solid #8c8c8c;
+    padding: 3px 0;
+    height: 80%;
+}
+
+.left{
+    float: left;
+    width: 15%;
+    border-right: 1px solid #8c8c8c;
+    height: 100%;
+}
+.main-body .left .active{
+    border-right: 3px solid #ac2925;
+}
+.right{
+    height: 100%;
+    overflow:auto;
+}
+
+/**-----------------------main-bottom-------------------------*/
+.main-bottom{
+    text-align: center;
+}

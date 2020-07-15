@@ -1,0 +1,1 @@
+exports.domainUrl = 'http://localhost:3000';

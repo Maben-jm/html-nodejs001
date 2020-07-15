@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.4.1/css/bootstrap.css" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap3-dialog/1.35.4/css/bootstrap-dialog.css" rel="stylesheet">
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/3.4.1/js/bootstrap.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/bootstrap3-dialog/1.35.4/js/bootstrap-dialog.js"></script>
+    <style>
+        .modal-header.bootstrap-dialog-draggable {
+            background-color: #f00200 !important;
+        }
+        html, body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body >
+
+<div class="container">
+    <button class="btn btn-primary" onclick="myAlert1()">弹出普通框</button>
+    <button class="btn btn-primary" onclick="myAlert2()">弹出确认框</button>
+    <button class="btn btn-primary" onclick="myAlert3()">弹出错误框</button>
+    <button class="btn btn-primary" onclick="myAlert4()">弹出正确框</button>
+    <button class="btn btn-primary" onclick="myAlert5()">弹出新页面</button>
+</div>
+
+</body>
+</html>
+<script src="js/alert.js"></script>
+<script>
+    function myAlert5() {
+        WingsDialog.showModalDialog({
+            title: '新页面',
+            height: $(window).height() * 0.5,
+            width: $(window).width() * 0.5,
+            url: "/toFrom"
+        });
+    }
+
+    function myAlert1() {
+        WingsDialog.alert("正在进行初始化数据,请在大概5分钟后刷新页面!!！");
+    }
+
+    function myAlert3() {
+        WingsDialog.alertWrong('这里是错误框!!!');
+    }
+
+    function myAlert2() {
+        WingsDialog.confirm("初始化确认", "系统初始化将清空系统所有数据，确定要系统初始化吗？", function (result) {
+            if (result) {
+                console.log('----------x------------');
+            }
+        });
+    }
+
+    function myAlert4() {
+        WingsDialog.alertRight(
+            "这是啥？？"
+        );
+    }
+</script>

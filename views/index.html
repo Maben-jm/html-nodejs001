@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bootstrap学习</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/bootstrap-3.4.1.css">
+</head>
+<body>
+<header class="main-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <a class="branding" href="#" title="马奔爱学习">
+                    <img id="logo" src="/img/logo.gif">
+                </a>
+                <h2>
+                    这里是bootstrap学习网站
+                </h2>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container-fluid main-body">
+    <div class="left">
+        <ul class="nav nav-pills nav-stacked">
+            <li role="presentation" class="active" onclick="chose(this,1,'/toForm')"><a href="#">表单测试</a></li>
+            <li role="presentation" onclick="chose(this,2,'/bootstrp-dialog')"><a href="#">弹框测试</a></li>
+            <li role="presentation" onclick="chose(this,3,'/bs/bootstrp-table')"><a href="#">弹框测试</a></li>
+        </ul>
+    </div>
+    <div class="right">
+        <div id="iframeDiv" class="div_iframeDiv"></div>
+    </div>
+</div>
+<div class="container-fluid main-bottom">
+    <h6>爱生活,爱学习</h6>
+</div>
+</body>
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script src="js/iframe.js"></script>
+<script>
+    window.onload = function () {
+        //设置logo大小
+        var winH = $(window).height();
+        console.log(winH);
+        document.getElementById("logo").setAttribute("style", "max-height:" + (winH * 0.12) + "px");
+        //设置默认导航选项
+        let arr = document.getElementsByClassName("active");
+        for (let i = 0; i < arr.length; i++) {
+            arr[i].click();
+        }
+    };
+
+    function chose(e, id, url) {
+        let arr = document.getElementsByClassName("active");
+        for (let i = 0; i < arr.length; i++) {
+            arr[i].className = "";
+        }
+        e.setAttribute("class", "active");
+        showIframe(id, url);
+    }
+</script>
